@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <h1>Contact Page!</h1>
+</head>
+<body>
+    <p>
+
+        {{my_text}},{{my_number}} {{my_list}}
+    </p>
+    <p>
+        {% for item in  my_list %}
+            {% if item == 4 %}
+                <li> we are inside if statement {{forloop.counter}} - {{item|add:22}} </li>
+            {% elif item == "abc" %}
+                <li>{{forloop.counter}}-{{item}} </li>
+            {% else %}
+                <li> {{forloop.counter}}-{{item}} </li>
+            {% endif %} 
+        {% endfor %}
+    </p>
+
+</body>
+</html>
+{% endblock  %}
